@@ -6,6 +6,11 @@ public class Conta {
     private String pessoa;
     private BigDecimal saldo;
 
+    public Conta(String pessoa, BigDecimal saldo) {
+        this.pessoa = pessoa;
+        this.saldo = saldo;
+    }
+
     public String getPessoa() {
         return pessoa;
     }
