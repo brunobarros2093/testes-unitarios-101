@@ -1,6 +1,6 @@
-package org.example.exemplos.models;
+package org.example.models;
 
-import org.junit.jupiter.api.Assertions;
+import org.example.models.Conta;
 import org.junit.jupiter.api.Test;
 
 import java.math.BigDecimal;
