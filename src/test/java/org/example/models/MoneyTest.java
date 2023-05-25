@@ -33,11 +33,11 @@ public class MoneyTest {
         assertEquals(Money.franc(5), Money.franc(5));
     }
 
-    // again: fail, make it work, refacto
+    // again: fail, make it work, refactor
     @Test
     void testCurrency() {
-        assertEquals("USD", Money.dollar(1).currency);
-        assertEquals("CHF", Money.franc(1).currency);
+        assertEquals("USD", Money.dollar(1).currency());
+        assertEquals("CHF", Money.franc(1).currency());
     }
 
 

@@ -6,6 +6,11 @@ public class Dollar extends Money {
 
     }
 
+    @Override
+    protected String currency() {
+        return "USD";
+    }
+
     public Money times(int multiplier){
        return new Dollar( amount * multiplier);
     }
