@@ -2,18 +2,22 @@ package org.example.models;
 
 public class Franc extends Money{
 
-    public Franc(int amount){
+    private String currency;
+
+    public Franc(int amount, String currency){
         this.amount = amount;
+        this.currency = currency;
 
     }
 
     @Override
     protected String currency() {
-        return "CHF";
+
+        return currency;
     }
 
     public Money times(int multiplier){
-        return new Franc( amount * multiplier);
+        return new Franc( amount * multiplier, "CHF");
     }
 
 

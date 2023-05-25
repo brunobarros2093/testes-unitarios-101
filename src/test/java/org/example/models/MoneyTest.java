@@ -17,7 +17,7 @@ public class MoneyTest {
     void testEqualityDollar() {
         assertEquals(Money.dollar(5), Money.dollar((5)));
         // os dois são money, logo, são iguais - alterando o equals()
-        assertNotEquals(new Dollar(5), new Franc(5));
+        assertNotEquals(Money.dollar(5), Money.franc(5));
     }
     // capitulo 5 do TDD - Red book
     // essa parte foi adicionada como exemplo de 'duplicação de código'

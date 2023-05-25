@@ -1,18 +1,22 @@
 package org.example.models;
 
 public class Dollar extends Money {
-    public Dollar(int amount){
-        this.amount = amount;
 
+    private String currency;
+
+    public Dollar(int amount, String currency){
+        this.amount = amount;
+        this.currency = currency;
     }
 
     @Override
     protected String currency() {
-        return "USD";
+
+        return currency;
     }
 
     public Money times(int multiplier){
-       return new Dollar( amount * multiplier);
+       return new Dollar( amount * multiplier, "USD");
     }
 
 
