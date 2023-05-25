@@ -3,6 +3,7 @@ package org.example.models;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 public class MoneyTest {
 
@@ -17,6 +18,8 @@ public class MoneyTest {
     @Test
     void testEqualityDollar() {
         assertEquals(new Dollar(5), new Dollar(5));
+        // os dois são money, logo, são iguais - alterando o equals()
+        assertNotEquals(new Dollar(5), new Franc(5));
     }
     // capitulo 5 do TDD - Red book
     @Test
