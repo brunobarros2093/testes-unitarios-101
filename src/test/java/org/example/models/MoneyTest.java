@@ -8,32 +8,17 @@ import static org.junit.jupiter.api.Assertions.assertNotEquals;
 public class MoneyTest {
 
     @Test
-    void testMultiplicationDollar() {
+    void testMultiplication() {
         Money five = Money.dollar(5);
         assertEquals(Money.dollar(10), five.times(2));
         assertEquals(Money.dollar(15), five.times(3));
     }
     @Test
-    void testEqualityDollar() {
+    void testEquality() {
         assertEquals(Money.dollar(5), Money.dollar((5)));
         // os dois são money, logo, são iguais - alterando o equals()
         assertNotEquals(Money.dollar(5), Money.franc(5));
     }
-    // capitulo 5 do TDD - Red book
-    // essa parte foi adicionada como exemplo de 'duplicação de código'
-
-    @Test
-    void testMultiplicationFranc() {
-        Money five = Money.franc(5);
-        assertEquals(Money.franc(10),  five.times(2));
-        assertEquals(Money.franc(15), five.times(3));
-    }
-    @Test
-    void testEqualityFranc() {
-        assertEquals(Money.franc(5), Money.franc(5));
-    }
-
-    // again: fail, make it work, refactor
     @Test
     void testCurrency() {
         assertEquals("USD", Money.dollar(1).currency());
