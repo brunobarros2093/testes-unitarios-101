@@ -1,6 +1,6 @@
 package org.example.models;
 
-public abstract class Money {
+public class Money {
 
     protected int amount;
     protected String currency;
@@ -14,7 +14,9 @@ public abstract class Money {
         return currency;
     }
 
-    public abstract Money times(int multiplier);
+    public Money times(int multiplier) {
+        return new Money(amount * multiplier, this.currency);
+    }
 
     public static Money dollar(int amount) {
         return new Dollar(amount, "USD");
@@ -26,6 +28,6 @@ public abstract class Money {
 
     public boolean equals(Object obj) {
         Money money = (Money) obj;
-        return amount == money.amount && this.getClass().equals(obj.getClass());
+        return amount == money.amount && this.currency == money.currency;
     }
 }
