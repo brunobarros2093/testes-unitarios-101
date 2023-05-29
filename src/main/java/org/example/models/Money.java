@@ -1,6 +1,6 @@
 package org.example.models;
 
-public class Money {
+public class Money implements Expression {
 
     protected int amount;
     protected String currency;
@@ -29,5 +29,9 @@ public class Money {
     public boolean equals(Object obj) {
         Money money = (Money) obj;
         return amount == money.amount && this.currency == money.currency;
+    }
+
+    public Expression plus(Money addend) {
+        return new Money(amount + addend.amount, currency);
     }
 }
